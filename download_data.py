@@ -45,12 +45,12 @@ def tar_from_uci(UCI_URL, dest = ' '):
 	response = urllib2.urlopen(UCI_URL)
 	compressed_file = StringIO.StringIO(response.read())
 	tar = tarfile.open(mode="r:gz", fileobj = compressed_file)
-    tar.extractall(path=dest)
-    datasets = tar.getnames()
-    for dataset in datasets:
-        size = os.path.getsize(dest+'\\'+dataset)
-        print ('File %s is %i bytes' % (dataset,size))
-    tar.close()
+    	tar.extractall(path=dest)
+    	datasets = tar.getnames()
+    	for dataset in datasets:
+        	size = os.path.getsize(dest+'\\'+dataset)
+        	print ('File %s is %i bytes' % (dataset,size))
+	 tar.close()
 
 def load_matrix(UCI_url):
     """
